@@ -15,6 +15,10 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 })
 -- Requires nvim-treesitter installed
 require("nvim-treesitter.configs").setup({
+  ensure_installed = { "c", "lua", "lua", "ruby" },
+  sync_install = false,
+  ignore_install = { "" },
+  auto_install = true,
   endwise = {
     enable = true,
   },
