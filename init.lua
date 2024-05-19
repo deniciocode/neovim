@@ -7,6 +7,12 @@ vim.opt.colorcolumn = "81"
 vim.o.relativenumber = false
 
 vim.cmd("colorscheme everforest")
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "Guardfile",
+  callback = function()
+    vim.bo.filetype = "ruby"
+  end,
+})
 -- Requires nvim-treesitter installed
 require("nvim-treesitter.configs").setup({
   endwise = {
