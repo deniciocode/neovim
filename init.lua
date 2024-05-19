@@ -8,8 +8,8 @@ vim.o.relativenumber = false
 
 vim.cmd("colorscheme everforest")
 -- Requires nvim-treesitter installed
-require('nvim-treesitter.configs').setup {
-    endwise = {
-        enable = true,
-    },
-}
+require("nvim-treesitter.configs").setup({
+  endwise = {
+    enable = true,
+  },
+})
