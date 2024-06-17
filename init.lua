@@ -18,6 +18,10 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     vim.bo.filetype = "ruby"
   end,
 })
+
+-- DeleteTrailingWhitespace Konfiguration
+vim.g.DeleteTrailingWhitespace = 1
+vim.g.DeleteTrailingWhitespace_Action = "delete"
 -- Requires nvim-treesitter installed
 require("nvim-treesitter.configs").setup({
   ensure_installed = { "c", "lua", "lua", "ruby" },
