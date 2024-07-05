@@ -5,6 +5,7 @@ require("config.lazy")
 vim.wo.signcolumn = "yes"
 vim.opt.colorcolumn = "81"
 vim.o.relativenumber = false
+vim.opt.sidescroll = 0
 
 if vim.g.gui_vimr ~= nil then
   vim.cmd("colorscheme tokyonight")
