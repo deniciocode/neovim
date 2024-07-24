@@ -8,7 +8,7 @@ vim.o.relativenumber = false
 vim.opt.sidescroll = 0
 
 if vim.g.gui_vimr ~= nil then
-  vim.cmd("colorscheme tokyonight")
+  vim.cmd("colorscheme tokyonight-storm")
 else
   vim.cmd("colorscheme everforest")
 end
