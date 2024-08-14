@@ -27,7 +27,7 @@ vim.g.DeleteTrailingWhitespace = 1
 vim.g.DeleteTrailingWhitespace_Action = "delete"
 -- Requires nvim-treesitter installed
 require("nvim-treesitter.configs").setup({
-  ensure_installed = { "c", "lua", "lua", "ruby" },
+  ensure_installed = { "c", "lua", "ruby", "html", "css", "javascript" },
   sync_install = false,
   ignore_install = { "" },
   auto_install = true,
