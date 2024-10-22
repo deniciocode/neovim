@@ -22,6 +22,12 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   end,
 })
 
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = "*.yml",
+  callback = function()
+    vim.bo.filetype = "yaml"
+  end,
+})
 -- DeleteTrailingWhitespace Konfiguration
 vim.g.DeleteTrailingWhitespace = 1
 vim.g.DeleteTrailingWhitespace_Action = "delete"
