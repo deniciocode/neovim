@@ -28,6 +28,13 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
     vim.bo.filetype = "yaml"
   end,
 })
+
+vim.api.nvim_set_keymap(
+  "i", -- insert mode
+  "<C-e>", -- shortcut (Ctrl + e)
+  "<%=  %><Left><Left><Left>",
+  { noremap = true, silent = true }
+)
 -- DeleteTrailingWhitespace Konfiguration
 vim.g.DeleteTrailingWhitespace = 1
 vim.g.DeleteTrailingWhitespace_Action = "delete"
