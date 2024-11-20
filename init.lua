@@ -1,5 +1,6 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
+require("config.rspec_keymaps")
 
 -- Keep signcolumn on by default
 vim.wo.signcolumn = "yes"
