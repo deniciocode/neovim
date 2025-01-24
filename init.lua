@@ -10,7 +10,7 @@ vim.opt.fillchars:append({ eob = " " })
 vim.opt.textwidth = 80
 
 if vim.g.gui_vimr ~= nil then
-  vim.cmd("colorscheme tokyonight-storm")
+  vim.cmd("colorscheme catppuccin")
 else
   vim.cmd("colorscheme everforest")
 end
