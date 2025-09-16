@@ -13,7 +13,7 @@ return {
     })
     require("lualine").setup({
       options = {
-        theme = "auto", -- Can also be "auto" to detect automatically.
+        theme = "everforest", -- Can also be "auto" to detect automatically.
       },
     })
   end,
