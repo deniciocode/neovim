@@ -11,10 +11,5 @@ return {
         hl.TSParameter = { link = "Yellow" }
       end,
     })
-    require("lualine").setup({
-      options = {
-        theme = "everforest", -- Can also be "auto" to detect automatically.
-      },
-    })
   end,
 }
