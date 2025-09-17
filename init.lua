@@ -23,6 +23,14 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     vim.bo.filetype = "ruby"
   end,
 })
+require("conform").setup({
+  formatters = {
+    erb = {
+      command = "erb-formatter",
+      args = { "--print-width", "80" },
+    },
+  },
+})
 
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   pattern = "*.yml",
