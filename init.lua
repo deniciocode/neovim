@@ -11,11 +11,7 @@ vim.opt.sidescroll = 0
 vim.opt.fillchars:append({ eob = " " })
 vim.opt.textwidth = 80
 
-if vim.g.gui_vimr ~= nil then
-  vim.cmd("colorscheme catppuccin")
-else
-  vim.cmd("colorscheme everforest")
-end
+vim.cmd("colorscheme everforest")
 
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = "Guardfile",

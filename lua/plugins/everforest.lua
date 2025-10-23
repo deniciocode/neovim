@@ -8,6 +8,7 @@ return {
       on_highlights = function(hl, palette)
         -- hl.TSSymbol = { link = "Yellow" } -- default is Agua
         -- hl.TSBoolean = { fg = palette.purple, bg = palette.none, bold = true }
+        hl.TSParameter = { link = palette.yellow }
         hl.TSParameter = { link = "Yellow" }
       end,
     })
