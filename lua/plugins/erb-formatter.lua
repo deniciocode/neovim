@@ -4,5 +4,11 @@ return {
     formatters_by_ft = {
       eruby = { "erb_format" },
     },
+    formatters = {
+      erb_format = {
+        command = "erb-formatter",
+        args = { "--print-width", "80" },
+      },
+    },
   },
 }

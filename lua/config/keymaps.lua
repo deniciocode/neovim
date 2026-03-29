@@ -2,6 +2,23 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
+-- Insert ERB expression tag
+vim.keymap.set("i", "<C-e>", "<%=  %><Left><Left><Left>", { noremap = true, silent = true, desc = "Insert ERB tag" })
+
+-- Unfocus all spec blocks (fcontext/fdescribe/fit → context/describe/it)
+vim.api.nvim_create_user_command("UnfocusSpecs", function()
+  local current_line = vim.fn.line(".")
+  local current_col = vim.fn.col(".")
+  vim.cmd([[%s/\<f\(context\|describe\|it\)/\1/g]])
+  vim.fn.cursor(current_line, current_col)
+end, { desc = "Unfocus all spec blocks and return to current line" })
+
+vim.keymap.set("n", "<leader>cu", ":UnfocusSpecs<CR>", {
+  noremap = true,
+  silent = true,
+  desc = "Unfocus specs and return to current line",
+})
+
 vim.keymap.set(
   "n",
   "<leader>ov",
