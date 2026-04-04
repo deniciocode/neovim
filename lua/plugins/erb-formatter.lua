@@ -6,8 +6,7 @@ return {
     },
     formatters = {
       erb_format = {
-        command = "erb-formatter",
-        args = { "--print-width", "80" },
+        prepend_args = { "--print-width", "80" },
       },
     },
   },
