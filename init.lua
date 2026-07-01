@@ -9,14 +9,14 @@ end
 local updating = false
 
 local function detect_macos_appearance()
-  local is_dark = vim.fn.system("defaults read -g AppleInterfaceStyle 2>/dev/null"):match("Dark") ~= nil
+  local is_dark = vim.fn
+    .system("defaults read -g AppleInterfaceStyle 2>/dev/null")
+    :match("Dark") ~= nil
   local bg = is_dark and "dark" or "light"
-  if vim.o.background ~= bg then
-    updating = true
-    vim.o.background = bg
-    vim.cmd.colorscheme(scheme_for_bg(bg))
-    updating = false
-  end
+  updating = true
+  vim.o.background = bg
+  vim.cmd.colorscheme(scheme_for_bg(bg))
+  updating = false
 end
 
 detect_macos_appearance()
