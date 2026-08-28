@@ -9,6 +9,22 @@ return {
         delay = 100,
       },
     },
+    files = {
+      -- fd is the default finder when installed; rg_opts is the fallback
+      fd_opts = table.concat({
+        "--color=never --type f --type l",
+        "--exclude .git --exclude .jj",
+        "--exclude vendor --exclude node_modules --exclude tmp --exclude log",
+        "--exclude coverage --exclude storage --exclude .yarn",
+        "--exclude dist --exclude build --exclude public/assets",
+        "--exclude public/packs --exclude public/packs-test",
+      }, " "),
+      rg_opts = table.concat({
+        "--color=never --files",
+        "-g '!{.git,.jj,vendor,node_modules,tmp,log,coverage,storage,.yarn,dist,build}'",
+        "-g '!{public/assets,public/packs,public/packs-test}'",
+      }, " "),
+    },
     grep = {
       -- per-line icon lookup is the main lua-side cost once rg returns
       -- thousands of matches
@@ -21,7 +37,7 @@ return {
         "--max-columns=512 --max-columns-preview",
         "--no-messages",
         "-g '!{.git,node_modules,tmp,log,coverage,storage,.yarn,dist,build}'",
-        "-g '!{public/assets,public/packs,public/packs-test,vendor/bundle}'",
+        "-g '!{public/assets,public/packs,public/packs-test,vendor}'",
         "-e",
       }, " "),
     },
