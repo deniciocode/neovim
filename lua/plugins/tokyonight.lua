@@ -2,7 +2,7 @@ return {
   {
     "folke/tokyonight.nvim",
     opts = {
-      style = "storm", -- storm, moon, night, day
+      style = "moon", -- storm, moon, night, day
     },
   },
 }
